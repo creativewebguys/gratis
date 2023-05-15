@@ -1,0 +1,212 @@
+
+--
+-- Database: `gratis`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cars`
+--
+
+CREATE TABLE `cars` (
+  `id` int NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `retailprice` decimal(15,2) NOT NULL,
+  `dealerprice` decimal(15,2) NOT NULL,
+  `screenshot` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `citympg` int NOT NULL,
+  `highwaympg` int NOT NULL,
+  `extcolor` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `intcolor` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `condition` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `vin` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mileage` int NOT NULL,
+  `stocknumber` int NOT NULL,
+  `lot` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `cars`
+--
+
+INSERT INTO `cars` (`id`, `name`, `retailprice`, `dealerprice`, `screenshot`, `citympg`, `highwaympg`, `extcolor`, `intcolor`, `condition`, `vin`, `mileage`, `stocknumber`, `lot`) VALUES
+(1, '2023 Buick Envision', '39365.00', '39365.00', 'car1-image-1.jpeg', 23, 31, 'Sapphire Metallic', 'Ebony Seats', 'New', 'LRBFZNR45PD024590', 11, 24590, 'Long Chevrolet Buick GMC'),
+(2, '2023 Buick Envision', '37990.00', '37990.00', 'car2-image-1.jpeg', 23, 31, 'Summit White', 'Ebony Seats Cloth', 'New', 'LRBAZLR47PD024279', 3062, 24279, 'Long Chevrolet Buick GMC'),
+(3, '2023 Buick Envision', '38870.00', '38870.00', 'car3-image-1.jpeg', 23, 31, 'Summit White', 'Ebony Seats', 'New', 'LRBFZNR44PD022183', 3191, 22183, 'Long Chevrolet Buick GMC'),
+(4, '2023 Chevrolet Silverado 1500', '62140.00', '61890.00', 'car4-image-1.jpeg', 16, 20, 'Dark Ash Metallic', 'Black Leather', 'New', '2GCUDDED2P1115870', 13, 115870, 'Long Chevrolet Buick GMC'),
+(5, '2023 GMC Sierra 1500', '66890.00', '66890.00', 'car5-image-1.jpeg', 16, 20, 'Onyx Black', 'Jet Black Leather', 'New', '3GTUUDED6PG160074', 4, 160074, 'Long Chevrolet Buick GMC'),
+(6, '2023 Buick Encore GX', '29285.00', '29285.00', 'car6-image-1.jpeg', 29, 31, 'White Frost Tricoat', 'Whisper Beige With Ebony', 'New', 'KL4MMBS28PB068734', 5, 68734, 'Long Chevrolet Buick GMC'),
+(7, '2023 Chevrolet Equinox', '37360.00', '35860.00', 'car7-image-1.jpeg', 26, 31, 'Iridescent Pearl Tricoat', 'Jet Black Leather', 'New', '3GNAXNEG4PL156162', 8, 156162, 'Long Chevrolet Buick GMC'),
+(8, '2023 Buick Encore GX', '27690.00', '27690.00', 'car8-image-1.jpeg', 29, 31, 'Cinnabar Metallic', 'Ebony With Ebony Interior', 'New', 'KL4MMBS28PB067681', 6, 67681, 'Long Chevrolet Buick GMC');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `car_data`
+--
+
+CREATE TABLE `car_data` (
+  `cid` int NOT NULL,
+  `meta_key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_value` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `car_data`
+--
+
+INSERT INTO `car_data` (`cid`, `meta_key`, `meta_value`) VALUES
+(1, '', 'Preferred Equipment Group 1SL'),
+(1, '', '3.47 Final Drive Axle Ratio'),
+(1, '', 'Wheels: 18\" Machined Aluminum w/Light Silver Met'),
+(1, '', 'Front Bucket Seats'),
+(1, '', 'Perforated Leather-Appointed Seat Trim'),
+(1, '', 'Not Equipped w/Driver & Fr Passenger Heated Seats'),
+(2, '', 'Preferred Equipment Group 1SC'),
+(2, '', '3.47 Final Drive Axle Ratio'),
+(2, '', 'Wheels: 18\" Aluminum w/Light Charcoal Met Finish'),
+(2, '', 'Wheels: 20\" Aluminum w/Dark Finish'),
+(3, '', 'Preferred Equipment Group 1SL'),
+(3, '', '3.47 Final Drive Axle Ratio'),
+(3, '', 'Wheels: 18\" Machined Aluminum w/Light Silver Met'),
+(3, '', 'Front Bucket Seats'),
+(3, '', 'Perforated Leather-Appointed Seat Trim'),
+(4, '', 'Preferred Equipment Group 1LT'),
+(4, '', '3.23 Rear Axle Ratio'),
+(4, '', 'Auto-Locking Rear Differential'),
+(4, '', 'Wheels: 17\" x 8\" Bright Silver Painted Aluminum'),
+(5, '', 'Preferred Equipment Group 4SA'),
+(5, '', '3.23 Rear Axle Ratio'),
+(5, '', 'Auto-Locking Rear Differential'),
+(5, '', 'Wheels: 18\" x 8.5\" 6-Spoke Machined Aluminum'),
+(6, '', 'Preferred Equipment Group 1SB'),
+(6, '', '5.45 Final Drive Axle Ratio'),
+(6, '', 'Wheels: 18\" Bright Silver Painted Aluminum'),
+(6, '', 'Cloth w/Leatherette Seat Trim'),
+(7, '', 'Preferred Equipment Group 1LZ'),
+(7, '', '3.50 Final Drive Axle Ratio'),
+(7, '', '18\" Aluminum Wheels'),
+(7, '', '19\" Aluminum Wheels'),
+(8, '', 'Preferred Equipment Group 1SB'),
+(8, '', '5.45 Final Drive Axle Ratio'),
+(8, '', 'Wheels: 18\" Bright Silver Painted Aluminum'),
+(8, '', 'Cloth w/Leatherette Seat Trim');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `car_images`
+--
+
+CREATE TABLE `car_images` (
+  `ciid` int NOT NULL,
+  `cid` int NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `iorder` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `car_images`
+--
+
+INSERT INTO `car_images` (`ciid`, `cid`, `image`, `iorder`) VALUES
+(1, 1, 'car1-image-1.jpeg', 0),
+(2, 1, 'car1-image-2.jpeg', 1),
+(3, 1, 'car1-image-3.jpeg', 2),
+(4, 1, 'car1-image-4.jpeg', 3),
+(5, 2, 'car2-image-1.jpeg', 0),
+(6, 2, 'car2-image-2.jpeg', 1),
+(7, 2, 'car2-image-3.jpeg', 2),
+(8, 2, 'car2-image-4.jpeg', 3),
+(9, 3, 'car3-image-1.jpeg', 0),
+(10, 3, 'car3-image-2.jpeg', 1),
+(11, 3, 'car3-image-3.jpeg', 2),
+(12, 3, 'car3-image-4.jpeg', 3),
+(13, 4, 'car4-image-1.jpeg', 0),
+(14, 4, 'car4-image-2.jpeg', 1),
+(15, 4, 'car4-image-3.jpeg', 2),
+(16, 4, 'car4-image-4.jpeg', 3),
+(17, 5, 'car5-image-1.jpeg', 0),
+(18, 5, 'car5-image-2.jpeg', 1),
+(19, 5, 'car5-image-3.jpeg', 2),
+(20, 5, 'car5-image-4.jpeg', 3),
+(21, 6, 'car6-image-1.jpeg', 0),
+(22, 6, 'car6-image-2.jpeg', 1),
+(23, 6, 'car6-image-3.jpeg', 2),
+(24, 6, 'car6-image-4.jpeg', 3),
+(25, 7, 'car7-image-1.jpeg', 0),
+(26, 7, 'car7-image-2.jpeg', 1),
+(27, 7, 'car7-image-3.jpeg', 2),
+(28, 7, 'car7-image-4.jpeg', 3),
+(29, 8, 'car8-image-1.jpeg', 0),
+(30, 8, 'car8-image-2.jpeg', 1),
+(31, 8, 'car8-image-3.jpeg', 2),
+(32, 8, 'car8-image-4.jpeg', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `uid` int NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `firstname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `forgot_code` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`uid`, `email`, `password`, `firstname`, `lastname`, `forgot_code`) VALUES
+(1, 'tntornado@gmail.com', '$2y$10$f/0tJkyGuNoC1aQsIPafD.016JEMVAIODe.In2/UWDiu6UIA5.81S', 'Joshua', 'Mitchell', '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cars`
+--
+ALTER TABLE `cars`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `car_images`
+--
+ALTER TABLE `car_images`
+  ADD PRIMARY KEY (`ciid`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`uid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cars`
+--
+ALTER TABLE `cars`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `car_images`
+--
+ALTER TABLE `car_images`
+  MODIFY `ciid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `uid` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
